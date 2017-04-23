@@ -34,4 +34,5 @@ double time_srok(double time, double income){
                                 if(time >= 241 & time <= 365 & income > 10000 & income > 100000) {option = percent * 15; option = option + income;} else
                                     cout << "ERROR! CHitajte usloviya vlkada!" << endl;
     return  option;
+}
 
