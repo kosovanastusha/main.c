@@ -20,3 +20,6 @@ int main(){
     system("pause");
     return 0;
 }
+double time_srok(double time, double income){
+    double option;
+    double percent = income / 100;
