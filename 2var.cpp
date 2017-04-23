@@ -23,3 +23,15 @@ int main(){
 double time_srok(double time, double income){
     double option;
     double percent = income / 100;
+    
+      if(time > 0 & time <= 30 & income > 10000 & income <= 100000) {option = percent * 10; option = income - option;} else
+        if(time > 0 & time <= 30 & income > 10000 & income > 100000) {option = percent * 10; option = income - option;} else
+            if(time >= 31 & time <= 120 & income > 10000 & income <= 100000) {option = percent * 2; option = option + income;} else
+                if(time >= 31 & time <= 120 & income > 10000 & income > 100000) {option = percent * 3; option = option + income;} else
+                    if(time >= 121 & time <= 240 & income > 10000 & income <= 100000) {option = percent * 6; option = option + income;} else
+                        if(time >= 121 & time <= 240 & income > 10000 & income > 100000) {option = percent * 8; option = option + income;} else
+                            if(time >= 241 & time <= 365 & income > 10000 & income <= 100000) {option = percent * 12; option = option + income;} else
+                                if(time >= 241 & time <= 365 & income > 10000 & income > 100000) {option = percent * 15; option = option + income;} else
+                                    cout << "ERROR! CHitajte usloviya vlkada!" << endl;
+    return  option;
+
