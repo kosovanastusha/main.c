@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
-#include <cstdlib>
 
 using namespace std;
 double time_srok(double time, double income);
