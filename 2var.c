@@ -1,62 +1,71 @@
-[Project]
-FileName=2var.c
-Name=Project1
-Type=1
-Ver=2
-ObjFiles=
-Includes=
-Libs=
-PrivateResource=
-ResourceIncludes=
-MakeIncludes=
-Compiler=
-CppCompiler=
-Linker=
-IsCpp=0
-Icon=
-ExeOutput=
-ObjectOutput=
-LogOutput=
-LogOutputEnabled=0
-OverrideOutput=0
-OverrideOutputName=
-HostApplication=
-UseCustomMakefile=0
-CustomMakefile=
-CommandLine=
-Folders=
-IncludeVersionInfo=0
-SupportXPThemes=0
-CompilerSet=4
-CompilerSettings=0000000100000000001000000
-UnitCount=1
+#include <stdio.h>
+#include <stdlib.h>
 
-[VersionInfo]
-Major=1
-Minor=0
-Release=0
-Build=0
-LanguageID=1033
-CharsetID=1252
-CompanyName=
-FileVersion=
-FileDescription=Developed using the Dev-C++ IDE
-InternalName=
-LegalCopyright=
-LegalTrademarks=
-OriginalFilename=
-ProductName=
-ProductVersion=
-AutoIncBuildNr=0
-SyncProduct=1
+void check(int d,int v);
+int calc(int d,int v,int s);
 
-[Unit1]
-FileName=main.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
+int main(){
+int d,v,s;
+
+printf("Enter the deposit amount(thousand of rubles):");
+scanf("%d",&v);
+
+printf("Enter the term(days):");
+scanf("%d",&d);
+
+check(d,v);
+calc(d,v,s);
+
+return 0;
+}
+
+void check(int d,int v){
+    if(d>365){
+	printf("ERROR:Term deposit-no more than 365 days!");
+	return 0;
+	}
+    if(d<0){
+	printf("ERROR:Term deposit can't be less than one day!");
+	return 0;
+	}
+    if(v<10){
+	printf("ERROR:Minimum deposit amount-10 thousand rubles!");
+	return 0;
+	}
+}
+
+int calc(int d,int v,int s ){
+    if (v<=100){
+	if(d<=30){
+	    s=v*0.9;
+	}
+	if(d>30 && d<121){
+	    s=v*1.02;
+	}
+	if(d>120 && d<241){
+	    s=v*1.06;
+	}
+	if(d>240 && d<=365){
+	    s=v*1.12;
+	}}
+    else {
+	if(d<=30){
+	    s=v*0.9;
+	}
+	if(d>30 && d<121){
+	    s=v*1.03;
+	}
+	if(d>120 && d<241){
+	    s=v*1.08;
+	}
+	if(d>240 && d<=365){
+	    s=v*1.15;
+	}}
+
+    printf("deposit amount after %d days:%d",d,s);
+    printf("\n");
+    return 0;
+}
+
+
 
