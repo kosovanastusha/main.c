@@ -60,7 +60,7 @@ int calc (int d,int v,int s ){{
 	}
 	if(d>240 && d<=365){
 	    s=v*1.15;
-	}}
+	}}}
 	
   printf("deposit amount after %d days:%d",d,s);
   printf("\n");
