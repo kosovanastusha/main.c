@@ -4,7 +4,7 @@
 void check(int d,int v);
 int calc(int d,int v,int s);
 
-int main(){
+int main() {
 int d,v,s;
 
 printf("Enter the deposit amount(thousand of rubles):");
@@ -19,22 +19,22 @@ calc(d,v,s);
 return 0;
 }
 
-void check(int d,int v){
+void check (int d,int v){
     if(d>365){
 	printf("ERROR: Term deposit-no more than 365 days!");
-	return 0;
+	//return 0;
 	}
     if(d<0){
 	printf("ERROR: Term deposit can't be less than one day!");
-	return 0;
+	//return 0;
 	}
     if(v<10){
 	printf("ERROR: Minimum deposit amount-10 thousand rubles!");
-	return 0;
+	//return 0;
 	}
 }
 
-int calc(int d,int v,int s ){
+int calc (int d,int v,int s ){{
     if (v<=100){
 	if(d<=30){
 	    s=v*0.9;
@@ -61,9 +61,11 @@ int calc(int d,int v,int s ){
 	if(d>240 && d<=365){
 	    s=v*1.15;
 	}}
+	
   printf("deposit amount after %d days:%d",d,s);
-   printf("\n");
-    return 0;
+  printf("\n");
+   
+   //return 0;
 }
 
 
